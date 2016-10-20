@@ -33,6 +33,8 @@ and creates a `dist/vendor.js` file.
 
 - `clean` - deletes build artifacts.
 
+- `serve` - serves the top-level directory at `localhost:3000`.
+
 # Project structure
 
     alm-template/
