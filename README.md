@@ -3,7 +3,8 @@
 This is a project template for quickly starting [Alm][alm] apps and the
 associated project infrastructure.
 
-Note: this template assumes that you'll be writing TypeScript files in `src`.
+Note: this template assumes that you'll be writing TypeScript files in `src`
+and that at least one of them will be called `app.ts`.
 
 # Usage
 
