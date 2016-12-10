@@ -1,26 +1,43 @@
 import { el, App } from './alm/alm';
+import { Grid } from './grid';
 
-const app = new App<number>({
-    state: 0,
-    update: (action, n) => n + (action ? 1 : -1),
+const app = new App<Grid>({
+    state: new Grid(8).initialize(),
+    update: (action, grid) => {
+        if (action['type'] === 'click') {
+            const coords = action.data;
+            console.log('touched grid cell x = ' +
+                coords[0] + ', y = ' + coords[1]);
+            grid = grid.toggle(coords[0], coords[1]);
+        }
+
+        if (action['type'] === 'solve') {
+            grid.solve();
+        }
+
+        return grid;
+    },
     main: scope => {
         scope.events.click
-            .filter(evt => evt.getId() === 'incr-btn')
-            .recv(evt => scope.actions.send(true));
+            .filter(evt => evt.hasClass('grid-cell'))
+            .recv(evt => {
+                const coordStr = evt.getId().split('-')[2];
+                const coords = coordStr.split(':').map(x => parseInt(x));
+                scope.actions.send({
+                    'type': 'click',
+                    'data': coords
+                });
+            });
 
         scope.events.click
-            .filter(evt => evt.getId() === 'decr-btn')
-            .recv(evt => scope.actions.send(false));
+            .filter(evt => evt.getId() === 'solve-btn')
+            .recv(evt => {
+                scope.actions.send({
+                    'type': 'solve'
+                });
+            });
     },
-    render: (n: number) =>
-        el('div', { 'id': 'main' }, [
-            el('h1', { 'key': 'hello' }, ['Hello, World!']),
-            el('span', { 'id': 'buttons' }, [
-                el('button', { 'id': 'incr-btn' }, ['+']),
-                el('button', { 'id': 'decr-btn' }, ['-'])
-            ]),
-            el('p', { 'key': 'the-number' }, [n.toString()])
-        ]),
+    render: (grid) => grid.render(),
     eventRoot: 'app',
     domRoot: 'app'
 }).start();
