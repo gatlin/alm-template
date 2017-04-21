@@ -141,7 +141,7 @@ export class App<T> {
     private ports: any;
     private state: T;
     private update: (a: any, m: T) => T;
-    private render: (t: T) => VTree
+    private render: (t: T) => VTree;
     private scope;
 
     constructor(cfg: AppConfig<T>) {
