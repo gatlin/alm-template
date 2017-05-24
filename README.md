@@ -29,11 +29,12 @@ already refers to.
 
 - `dist` - takes the file created by `make`, uglifies it, and puts it in the
 `dist` directory. It also concatenates all JavaScript files in `static/vendor`
-and creates a `dist/vendor.js` file.
+and creates a `dist/vendor.js` file. It also copies any CSS assets to `dist/css`.
 
 - `clean` - deletes build artifacts.
 
-- `serve` - serves the top-level directory at `localhost:3000`.
+- `serve` - serves the top-level directory at `localhost:3000`. Notably it
+reroutes any requests to `dist` to `static` for development ease.
 
 # Project structure
 
