@@ -11,10 +11,8 @@
     },
     "author": "CHANGEME",
     "scripts": {
-        "test": "./tests/*.ts",
-        "clean": "rm -rf _bundles lib build",
-        "build": "NODE_ENV=production webpack",
-        "docs": "cd docs && webpack"
+        "clean": "rm -rf js/*.js",
+        "build": "NODE_ENV=production webpack"
     },
     "devDependencies": {
         "@types/node": "^8.0.50",
