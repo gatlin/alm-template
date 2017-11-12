@@ -79,7 +79,6 @@ const edit = ({ tasks, field, uid }, taskUid) => {
 };
 
 const updateTask = ({ tasks, field, uid }, { uid: taskUid, text }) => {
-
     for (let i = tasks.length; i--;) {
         if (tasks[i].uid === taskUid) {
             tasks[i].editing = false;
