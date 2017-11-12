@@ -11,7 +11,7 @@
     },
     "author": "CHANGEME",
     "scripts": {
-        "clean": "rm -rf js/*.js",
+        "clean": "rm -rf ./js",
         "build": "NODE_ENV=production webpack"
     },
     "devDependencies": {
