@@ -58,5 +58,3 @@ data
 .AppleDouble
 static/js/*
 tmp/
-init.sh
-package.json.sample

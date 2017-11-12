@@ -6,6 +6,9 @@ read pkgname
 echo -n "Version > "
 read pkgver
 
+echo -n "Author > "
+read pkgauthor
+
 echo -n "Homepage > "
 read pkghome
 
@@ -21,6 +24,10 @@ sed -r -i'' "s/(\"name\": \")alm-skel(\",)/\1$pkgname\2/" package.json
 
 if [[ ! -z $pkgver ]]; then
     sed -r -i'' "s|(\"version\": \")0.0.1(\",)|\1$pkgver\2|" package.json
+fi
+
+if [[ ! -z $pkgauthor ]]; then
+    sed -r -i'' "s|(\"author\": \")CHANGEME(\",)|\1$pkgauthor\2|" package.json
 fi
 
 if [[ ! -z $pkghome ]]; then
