@@ -13,7 +13,7 @@ var config = {
     },
 
     resolve: {
-        extensions: ['.ts', '.js' ]
+        extensions: ['.ts', '.tsx', '.js', '.jsx' ]
     },
 
     plugins: [
@@ -26,7 +26,10 @@ var config = {
     module: {
         loaders: [{
             test: /\.tsx?$/,
-            loader: 'awesome-typescript-loader',
+            loaders: [
+                'babel-loader',
+                'awesome-typescript-loader'
+            ],
             exclude: /node_modules/
         }]
     }
