@@ -1,4 +1,4 @@
-import { Alm } from '../lib/alm';
+import { Alm } from 'alm';
 
 import { State, initialState } from './store';
 import { Actions } from './actions';

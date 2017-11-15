@@ -9,7 +9,8 @@
         "jsx": "preserve"
     },
     "awesomeTypescriptLoaderOptions": {
-        "useBabel": true
+        "useBabel": true,
+        "transpileOnly": true
     },
     "files": [ "./src/main.ts" ]
 }

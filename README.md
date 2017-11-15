@@ -39,6 +39,24 @@ To clean up:
 
     $> npm run clean
 
+## JSX support
+
+The webpack configuration provided here uses Babel and the plugin
+`babel-plugin-transform-jsx` to transpile JSX.
+
+To use JSX in a file:
+
+1. Ensure the extension is `.tsx`.
+2. Include the following code at the top of the module:
+
+```typescript
+import * as Alm from 'alm';
+const jsx = Alm.jsx;
+```
+
+This isn't the most elegant but for now it's what I've managed to make
+work. Pull requests are welcome!
+
 ## Project layout
 
 The project should be laid out as follows:

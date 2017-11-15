@@ -1,4 +1,4 @@
-import { connect } from '../../lib/alm';
+import { connect } from 'alm';
 import * as actions from '../actions';
 import MainComponent from '../components/MainComponent';
 

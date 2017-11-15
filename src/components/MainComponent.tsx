@@ -1,6 +1,7 @@
-import * as Alm from '../../lib/alm';
-const jsx = Alm.jsx;
+import * as Alm from 'alm';
 import TaskView from '../views/TaskView';
+
+const jsx = Alm.jsx;
 
 /**
  * The main application component. Self-explanatory.

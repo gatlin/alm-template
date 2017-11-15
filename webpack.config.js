@@ -26,10 +26,7 @@ var config = {
     module: {
         loaders: [{
             test: /\.tsx?$/,
-            loaders: [
-                'babel-loader',
-                'awesome-typescript-loader'
-            ],
+            loader: 'awesome-typescript-loader',
             exclude: /node_modules/
         }]
     }

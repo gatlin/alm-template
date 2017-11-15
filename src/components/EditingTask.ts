@@ -1,4 +1,4 @@
-import { el } from '../../lib/alm';
+import { el } from 'alm';
 
 const EditingTask = ({ uid, description, update }) =>
     el('input', {

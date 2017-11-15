@@ -1,4 +1,4 @@
-import { el } from '../../lib/alm';
+import { el } from 'alm';
 
 const ViewingTask = ({ uid, completed, description, edit }) =>
     el('label', {
