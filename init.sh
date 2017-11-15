@@ -42,6 +42,7 @@ if [[ ! -z $pkgrepo ]]; then
     sed -r -i'' "s|(\"url\": \")n/a(\")|\1$pkgrepo\2|" package.json
 fi
 
-# add this script and the sample package.json to gitignore
-echo "init.sh" >> .gitignore
-echo "package.json.sample" >> .gitignore
+# remove all traces of the old project
+rm -rf .git/
+rm package.json.sample
+rm init.sh
