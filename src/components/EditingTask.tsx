@@ -1,12 +1,13 @@
-import { el } from 'alm';
+import * as Alm from 'alm';
+const jsx = Alm.jsx;
 
-const EditingTask = ({ uid, description, update }) =>
-    el('input', {
-        'type': 'text',
-        'class': 'editing',
-        'id': 'edit-task-' + uid,
-        'value': description,
-        'on': {
+const EditingTask = ({ uid, description, update }) => (
+    <input
+        type='text'
+        className='editing'
+        id={'edit-task-' + uid}
+        value={description}
+        on={{
             keydown: evt => {
                 if (evt.getRaw().keyCode === 13) {
                     let text = evt.getValue();
@@ -17,7 +18,8 @@ const EditingTask = ({ uid, description, update }) =>
                 let text = evt.getValue();
                 update({ uid, text });
             }
-        }
-    });
+        }}>
+    </input>
+);
 
 export default EditingTask;
