@@ -2,14 +2,17 @@
     "compilerOptions": {
         "noImplicitAny": false,
         "removeComments": true,
+        "strictNullChecks": true,
+        "noImplicitAny": false,
         "target": "es5",
         "types": [
             "node"
         ],
-        "jsx": "preserve"
+        "jsx": "react",
+        "jsxFactory": "Alm.el"
     },
     "awesomeTypescriptLoaderOptions": {
-        "useBabel": true
+        "useCache": true
     },
     "files": [ "./src/main.ts" ]
 }

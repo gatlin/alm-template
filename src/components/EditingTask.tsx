@@ -1,5 +1,4 @@
 import * as Alm from 'alm';
-const jsx = Alm.jsx;
 
 const EditingTask = ({ uid, description, update }) => (
     <input

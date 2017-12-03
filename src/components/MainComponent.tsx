@@ -1,8 +1,6 @@
 import * as Alm from 'alm';
 import TaskView from '../views/TaskView';
 
-const jsx = Alm.jsx;
-
 /**
  * The main application component. Self-explanatory.
  */
@@ -36,7 +34,16 @@ const MainComponent = props => (
         <ul
             className="todo_list"
             id="todo_list"
-        >{props.tasks.map(task => TaskView(task))}
+        >{props.tasks.map(
+            ({ uid, completed, editing, description }) => (
+                <TaskView
+                    uid={uid}
+                    completed={completed}
+                    editing={editing}
+                    description={description}
+                ></TaskView>
+            )
+        )}
         </ul>
     </section>
 );

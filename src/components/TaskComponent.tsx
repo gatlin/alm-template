@@ -1,5 +1,4 @@
 import * as Alm from 'alm';
-const jsx = Alm.jsx;
 
 import EditingTask from './EditingTask';
 import ViewingTask from './ViewingTask';
