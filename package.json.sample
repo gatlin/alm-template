@@ -22,7 +22,7 @@
         "webpack": "^3.8.1"
     },
     "dependencies": {
-        "alm": "https://github.com/gatlin/Alm.git",
+        "alm": "gatlin/Alm",
         "awesome-typescript-loader": "^3.3.0",
         "css-loader": "^0.28.7",
         "style-loader": "^0.19.0"
