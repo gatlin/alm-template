@@ -2,8 +2,6 @@
     "compilerOptions": {
         "noImplicitAny": false,
         "removeComments": true,
-        "strictNullChecks": true,
-        "noImplicitAny": false,
         "target": "es5",
         "types": [
             "node"
