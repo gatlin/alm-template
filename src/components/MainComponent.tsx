@@ -4,7 +4,6 @@ import TaskView from '../views/TaskView';
 /**
  * The main application component. Self-explanatory.
  */
-
 const MainComponent = props => (
     <section
         id="the_app"
@@ -34,16 +33,8 @@ const MainComponent = props => (
         <ul
             className="todo_list"
             id="todo_list"
-        >{props.tasks.map(
-            ({ uid, completed, editing, description }) => (
-                <TaskView
-                    uid={uid}
-                    completed={completed}
-                    editing={editing}
-                    description={description}
-                ></TaskView>
-            )
-        )}
+          >
+          {props.tasks.map(TaskView)}
         </ul>
     </section>
 );

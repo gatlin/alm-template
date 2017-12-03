@@ -12,6 +12,7 @@
     "author": "CHANGEME",
     "scripts": {
         "clean": "rm -rf ./js",
+        "watch": "webpack --watch",
         "build": "NODE_ENV=production webpack"
     },
     "devDependencies": {
