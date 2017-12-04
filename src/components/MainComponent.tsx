@@ -1,6 +1,8 @@
 import * as Alm from 'alm';
 import TaskView from '../views/TaskView';
 
+import './MainComponent.css';
+
 /**
  * The main application component. Self-explanatory.
  */
