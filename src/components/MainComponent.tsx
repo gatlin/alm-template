@@ -15,7 +15,7 @@ const MainComponent = props => (
             className="header">
             <h1 key="title">
                 Obligatory Todo App
-        </h1>
+            </h1>
             <p>Double-click tasks to edit them</p>
         </header>
         <input
