@@ -18,7 +18,7 @@ read pkgdescr
 echo -n "Git repository > "
 read pkgrepo
 
-/usr/bin/env cp package.json.sample package.json
+cp package.json.sample package.json
 
 sed -r -i'' "s/(\"name\": \")alm-skel(\",)/\1$pkgname\2/" package.json
 

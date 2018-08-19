@@ -1,12 +1,11 @@
 import { Alm } from 'alm';
 
-import { State, initialState } from './store';
 import { Actions } from './actions';
 import MainView from './views/MainView';
-import reducer from './reducer';
+import { reducer, State, initialState } from './reducer';
 
 // The actual application.
-const app = new Alm<State, Actions>({
+const app = new Alm({
     model: initialState,
     update: reducer,
     view: MainView(),
@@ -25,6 +24,7 @@ app.store.subscribe(() => {
     document.title = num_tasks === 0
         ? 'Todo List'
         : '(' + num_tasks + ') Todo List';
+
 });
 
 // And we're off
