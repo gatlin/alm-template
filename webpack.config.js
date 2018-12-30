@@ -1,7 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-var config = {
+var config = (env, argv) => ({
+    devtool: 'inline-source-map',
     entry: {
         'main': './src/main.ts',
         'main.min': './src/main.ts'
@@ -16,17 +18,24 @@ var config = {
         extensions: ['.ts', '.tsx', '.js', '.jsx' ]
     },
 
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            minimize: true,
-            include: /\.min\.js$/
-        })
-    ],
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                cache: false,
+                parallel: true,
+                uglifyOptions: {
+                    compress: true,
+                    ecma: 5,
+                    mangle: true
+                }
+            })
+        ]
+    },
 
     module: {
-        loaders: [{
+        rules: [{
             test: /\.tsx?$/,
-            loader: 'awesome-typescript-loader',
+            loader: 'ts-loader',
             exclude: /node_modules/
         },{
             test: /\.css$/,
@@ -36,6 +45,6 @@ var config = {
             ]
         }]
     }
-};
+});
 
 module.exports = config;

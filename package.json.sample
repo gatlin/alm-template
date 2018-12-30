@@ -12,18 +12,20 @@
     "author": "CHANGEME",
     "scripts": {
         "clean": "rm -rf ./js",
-        "watch": "webpack --watch",
-        "build": "NODE_ENV=production webpack"
+        "watch": "webpack --mode=development --watch",
+        "build": "webpack --mode=produciton"
     },
     "devDependencies": {
         "@types/node": "^8.0.50",
         "tap": "^12.0.1",
         "typescript": "^3.0.1",
-        "webpack": "^4.16.5"
+        "uglifyjs-webpack-plugin": "^2.0.1",
+        "webpack": "^4.16.5",
+        "webpack-cli": "^3.1.1"
     },
     "dependencies": {
         "alm": "gatlin/Alm",
-        "awesome-typescript-loader": "^5.2.0",
+        "ts-loader": "^5.2.0",
         "css-loader": "^1.0.0",
         "style-loader": "^0.22.1"
     }
